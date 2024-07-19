@@ -8,14 +8,14 @@ def sex():
     roll = randrange(1,3)
 
     if roll <= 1:
-        print("Male")
+        return "Male"
 
     elif roll > 1:
-        print("Female")
+        return "Female"
 
     ##print(roll) - - FOR DEBUG 
 
-sex()
+
 
 
 
@@ -56,37 +56,37 @@ def race(): # Sigil Demographics
     roll = randrange(1,100)
   
     if roll <= 37:
-        print("Human")
+        return "Human"
 
     elif roll <= 49:
-        print("Tiefling")
+        return "Tiefling"
 
     elif roll <= 58:
-        print("Half-Elf")
+        return "Half-Elf"
 
     elif roll <= 63:
-        print("Aasimar")
+        return "Aasimar"
 
     elif roll <= 68:
-        print("Githzerai")
+        return "Githzerai"
 
     elif roll <= 71:
-        print("Bariaur")
+        return "Bariaur"
     
     elif roll <= 73:
-        print(random.choice(gensai))
+        return (random.choice(gensai))
 
     elif roll <= 74:
-        print(random.choice(halfling))
+        return (random.choice(halfling))
         ##race = halfling
 
     elif roll >=75 :
-        print(random.choice(otherRace))
+        return (random.choice(otherRace))
         ##race = other
     
     ##print(roll) #DEBUG prints the roll
 
-race()
+
 
 charClass= ["Mystic", "Warlock", "Favoured Soul", "Ninja", "Scout", "Monk", "Spellthief", "Knight", "Psion", "Psychic Warrior", "Wilder", "Soulknife", "Dragonfire Adept", "Beguiler", 
             "Dragon Shaman", "Duskblade", "Warmage", "Wu Jen", "Shugenja", "Spirit Shaman", "Ardent", "Divine Mind", "Erudite", "Lurk", "Hexblade", "Samurai", "Swashbuckler", "Mariner", "Master",
@@ -104,117 +104,47 @@ def job():
     roll = randrange(1,100)
 
     if roll <= 10:
-        print("Barbarian")
+        return "Barbarian"
 
     elif roll <= 15:
-        print("Bard")
+        return ("Bard")
 
     elif roll <= 25:
-        print("Cleric")
+        return ("Cleric")
 
     elif roll <= 30:
-        print("Druid")
+        return ("Druid")
     
     elif roll <= 50:
-        print("Fighter")
+        return ("Fighter")
 
     elif roll <= 55:
-        print("Monk")
+        return ("Monk")
 
     elif roll <= 60:
-        print ("Ranger")
+        return ("Ranger")
 
     elif roll <= 80:
-        print ("Rogue")
+        return ("Rogue")
 
     elif roll <= 85:
-        print ("Sorcerer")
+        return ("Sorcerer")
 
     elif roll <= 90:
-        print("Wizard")
+        return ("Wizard")
 
     elif roll >= 91:
-        print(random.choice(charClass))
+        return(random.choice(charClass))
 
     ##print(roll) - FOR DEBUG 
 
-job()
+def roll_char():
+    return f"{sex()} {race()} {job()}\n"
 
-
-#print(sex(), race(), job())
-
-    #print("do you wish to roll again?")
-    #repeat_rolling = ("y or yes") in input().lower()
-
-
-
-#repeat_rolling = True
-#while repeat_rolling:
-#    print("You rolled the following number = ", random.randint(1,100))
-#    
-#    repeat_rolling = ("y" or "yes") in input().lower()
-
-
-
-## def race(): # Using Thay's Demographics as an Example
-    ##roll = randrange(1,100)
-
-    ##if roll <= 62:
-      ##  print("Human")
-
-    ##elif roll <= 72:
-      ##  print("Gnoll")
-
-    ##elif roll <= 82:
-      ##  print("Orc")
-
-    ##elif roll <= 90:
-      ##  print("Dwarf")
-
-    ##elif roll <= 95:
-      ##  print("Goblin")
-
-    ##elif roll <= 99:
-      ##  print("Halfling")
-
-    ##elif roll > 99:
-    ##    print("Other")
-    
-  ##  print(roll) #DEBUG prints the roll
-
-##race()
-
-##def race(): # Sword Coast Demographics
-    ##roll = randrange(1,100)
-
-    ##if roll <= 65:
-      ##  print("Human")
-
-##    elif roll <= 75:
-  ##      print("Dwarf")
-
-   ## elif roll <= 83:
-     ##   print("Orc")
-
-   ## elif roll <= 92:
-     ##   print("Half Orc")
-
-    ## elif roll <= 96:
-       ## print("Halfling")
-
-    ##elif roll <= 98:
-      ##  print("Gnome")
-    
-    ##elif roll <= 99:
-      ##  print("Half-Elf")
-
-   ## elif roll > 99:
-     ##   print("Other")
-    
-    #### race()
-
-
-
-
-
+roll_again = True
+while roll_again:
+    print (roll_char())
+    repeat = input("Roll another? (y/n)").strip().lower()
+    if repeat != 'y':
+        roll_again = False
 
